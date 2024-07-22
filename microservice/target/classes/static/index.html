@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Customer Management</h1>
+<form id="customerForm">
+    <input type="hidden" id="customerId" name="id">
+    <input type="text" id="name" name="name" placeholder="Name" required>
+    <input type="text" id="surname" name="surname" placeholder="Surname" required>
+    <input type="text" id="gender" name="gender" placeholder="Gender" required>
+    <input type="number" id="age" name="age" placeholder="Age" required>
+    <input type="text" id="phone_number" name="phone_number" placeholder="Phone Number" required>
+    <br>
+    <button type="submit">Add/Update</button>
+</form>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Phone Number</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody id="customerTableBody">
+    <!-- Rows will be inserted here by JavaScript -->
+    </tbody>
+</table>
+<a href="kafka.html">Send Data to Kafka</a> <!-- Added link to Kafka page -->
+<script src="scripts.js"></script>
+</body>
+</html>

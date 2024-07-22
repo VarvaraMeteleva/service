@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kafka Message Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1>Kafka Message Viewer</h1>
+<button onclick="loadMessages()">Reload Messages</button>
+<div id="messages"></div>
+<script>
+    async function loadMessages() {
+        const response = await fetch('/api/messages');
+        const messages = await response.json();
+        const messagesDiv = document.getElementById('messages');
+        messagesDiv.innerHTML = '';
+        messages.forEach(message => {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.textContent = message;
+            messagesDiv.appendChild(messageDiv);
+        });
+    }
+
+    // Load messages when the page loads
+    window.onload = loadMessages;
+</script>
+</body>
+</html>
